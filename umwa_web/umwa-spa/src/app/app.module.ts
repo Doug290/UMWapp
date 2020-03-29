@@ -7,13 +7,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // LOCAL COMPONENTS
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyComponentComponent } from './components/my-component/my-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyComponentComponent
   ],
   imports: [
     BrowserModule,
