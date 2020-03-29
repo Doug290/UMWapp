@@ -1,6 +1,7 @@
 package com.douglas.umwa.application.service.movie;
 
 import com.douglas.umwa.application.resources.query.movie.detailed.UpcomingMovieDetailQueryResponseDTO;
+import com.douglas.umwa.application.resources.query.movie.detailed.proxy.UpcomingMovieDetailQueryProxy;
 import com.douglas.umwa.application.resources.query.movie.listing.UpcomingMovieListQueryResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +30,11 @@ public class UpcomingMovieQueryService {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(DETAILED_MOVIE_URL)
                 .path(id.toString())
                 .queryParam("api_key", tmdbKey);
-        return restTemplate.getForEntity(builder.toUriString(), UpcomingMovieDetailQueryResponseDTO.class);
+
+        ResponseEntity<UpcomingMovieDetailQueryProxy> responseProxy = restTemplate.getForEntity(builder.toUriString(), UpcomingMovieDetailQueryProxy.class);
+
+        UpcomingMovieDetailQueryResponseDTO responseDto = new UpcomingMovieDetailQueryResponseDTO(responseProxy.getBody());
+
+        return ResponseEntity.ok().body(responseDto);
     }
 }
