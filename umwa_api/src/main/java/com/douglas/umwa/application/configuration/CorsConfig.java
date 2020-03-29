@@ -1,4 +1,4 @@
-package com.douglas.umwa.configuration;
+package com.douglas.umwa.application.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
