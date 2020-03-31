@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class BaseInformationMovieDTO {
+public class BaseInformationMovieResponseDTO {
     private Long id;
     private String title;
     private String poster_path;

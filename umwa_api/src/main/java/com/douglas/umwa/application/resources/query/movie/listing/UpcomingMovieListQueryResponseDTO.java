@@ -12,5 +12,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpcomingMovieListQueryResponseDTO {
-    private List<BaseInformationMovieDTO> results;
+    private List<BaseInformationMovieResponseDTO> results;
 }

@@ -5,10 +5,7 @@ import com.douglas.umwa.application.resources.query.movie.listing.UpcomingMovieL
 import com.douglas.umwa.application.service.movie.UpcomingMovieQueryService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -18,12 +15,20 @@ public class UpcomingMovieQueryController {
     private UpcomingMovieQueryService upcomingMovieQueryService;
 
     @GetMapping("/list")
-    public ResponseEntity<UpcomingMovieListQueryResponseDTO> findList() {
-        return this.upcomingMovieQueryService.getListPaged(1);
+    public ResponseEntity<UpcomingMovieListQueryResponseDTO> findList(
+            @RequestParam Integer page) {
+        return this.upcomingMovieQueryService.getListPaged(page);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<UpcomingMovieDetailQueryResponseDTO> findList(@PathVariable("id") Long id) {
         return this.upcomingMovieQueryService.getDetail(id);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<UpcomingMovieListQueryResponseDTO> findList(
+            @RequestParam("movieSerach") String movieSearch,
+            @RequestParam("page") Long page) {
+        return this.upcomingMovieQueryService.getSearchListPaged(page, movieSearch);
     }
 }

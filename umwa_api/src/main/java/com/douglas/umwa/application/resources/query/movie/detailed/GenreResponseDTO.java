@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class GenreDTO {
+public class GenreResponseDTO {
     private String name;
 }
