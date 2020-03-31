@@ -1,6 +1,8 @@
-## Upcoming Movies Web App
+# Upcoming Movies Web App
 
-#### Application setup
+## Server - Spring Boot
+
+#### Application setup:
 
 ##### Install Lombok (Eclipse)
 * Download lombok version 1.18.4 in [https://projectlombok.org/download](https://projectlombok.org/download)
@@ -9,7 +11,13 @@
 * Reboot eclipse
 
 
-### Client - Angular 9
+## Client - Angular 9
 
 #### Assumptions 
-* For the movie card listing I had to make it as simple as possible with the time I had, so I used basic bootstrap templates.
+* Will assume movie filtering option will return all movies and not just the upcoming ones.
+
+#### Observations
+* For the movie card listing I had to make it as simple as possible with the time I had, so it was used basic bootstrap templates.
+
+#### TODO
+* 
