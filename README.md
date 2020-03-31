@@ -1,6 +1,7 @@
 # Upcoming Movies Web App
 
 ## Server - Spring Boot
+The server side of the app was built based on the CQRS Architecture. Since it is a "GET only" API with no data to persist.
 
 #### Application setup:
 
@@ -20,4 +21,5 @@
 * For the movie card listing I had to make it as simple as possible with the time I had, so it was used basic bootstrap templates.
 
 #### TODO
-* 
+* GET genres from API
+* Fix CORS issue
