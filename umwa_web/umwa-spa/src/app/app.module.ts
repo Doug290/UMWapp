@@ -7,11 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // LOCAL COMPONENTS
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UpcomingMoviesListComponent } from './components/upcoming-movies-list/upcoming-movies-list.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    UpcomingMoviesListComponent,
+    MovieDetailComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
