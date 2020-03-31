@@ -32,6 +32,8 @@ public class UpcomingMovieQueryService {
                 .path(UPCOMING_MOVIES_URI)
                 .queryParam("api_key", tmdbKey)
                 .queryParam("page", page);
+
+        ResponseEntity<UpcomingMovieListQueryResponseDTO> teste = restTemplate.getForEntity(builder.toUriString(), UpcomingMovieListQueryResponseDTO.class);
         return restTemplate.getForEntity(builder.toUriString(), UpcomingMovieListQueryResponseDTO.class);
     }
 

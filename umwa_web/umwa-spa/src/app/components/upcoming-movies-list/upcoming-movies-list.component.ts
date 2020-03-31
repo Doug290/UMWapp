@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/service/movie.service';
+import { MovieDTO } from 'src/app/domain/dtos/movie/MovieDTO';
+import { MovieListItem } from 'src/app/domain/models/MovieListItem';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-upcoming-movies-list',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingMoviesListComponent implements OnInit {
 
-  constructor() { }
+  singleMovieReturn: MovieDTO;
+
+  constructor(
+    private moviesService: MovieService
+  ) { }
 
   ngOnInit() {
+    this.moviesService.getUpcomingMoviesList(1).subscribe((result: any) => {
+      console.log(result);
+    });
   }
 
 }
